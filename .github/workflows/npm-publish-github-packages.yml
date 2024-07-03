@@ -1,0 +1,36 @@
+#这个工作流将使用node运行测试，然后在创建发布时将一个包发布到GitHub包
+#更多信息请参见：https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+名字: js包
+
+在:
+释放:
+类型: [创建]
+
+工作:
+建筑:
+    runs-on: ubuntu-latest
+步骤:
+      - 用途: actions/checkout@v4
+      - 用途: actions/setup-node@v3
+与:
+          node-version: 16
+query为空跑: npm ci
+      - 跑: npm测试
+
+  publish-gpr:
+必须: 建筑
+    runs-on: ubuntu-latest
+权限:
+内容: 阅读
+套餐: 写
+步骤:
+      - 用途: actions/checkout@v4
+      - 用途: actions/setup-node@v3
+与:
+          node-version: 16
+          registry-url: 超文本传输协议（http）模块接口超文本传输协议安全（https）://npm.pkg.github.com/
+      - 跑: npm ci
+      - 跑: npm公布
+env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
