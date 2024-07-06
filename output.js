@@ -1,4 +1,4 @@
-//Wed Jul 03 2024 12:19:32 GMT+0000 (Coordinated Universal Time)
+//Sat Jul 06 2024 00:16:28 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 const _0x4c672b = _0x4a9430("中国联通"),
